@@ -22,4 +22,14 @@ public class StringTest {
         assertThat(split).containsExactly("1","2"); // 순서도 확인함
     }
 
+    @Test
+    void subString() {
+        //given
+        String data = "(1,2)";
+        //when
+        String substring = data.substring(1, data.length() - 1);
+        //then
+        assertThat(substring).isEqualTo("1,2");
+    }
+
 }
