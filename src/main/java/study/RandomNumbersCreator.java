@@ -11,14 +11,9 @@ import java.util.stream.Collectors;
  */
 public class RandomNumbersCreator {
     private static final List<String> RANDOM_NUMBERS = new ArrayList<>(List.of("1","2","3","4","5","6","7","8","9"));
-    private List<String> selectNumbers;
 
-    public void create() {
+    public List<String> create() {
         Collections.shuffle(RANDOM_NUMBERS);
-        selectNumbers = RANDOM_NUMBERS.stream().limit(3).collect(Collectors.toList());
-    }
-
-    public List<String> getNumbers() {
-        return selectNumbers;
+        return RANDOM_NUMBERS.stream().limit(3).collect(Collectors.toList());
     }
 }
