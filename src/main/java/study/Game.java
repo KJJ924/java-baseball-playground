@@ -7,8 +7,11 @@ package study;
 public class Game {
 
     public static void main(String[] args) {
-        BaseBallGame baseBallGame = new BaseBallGame();
-        baseBallGame.start();
+        boolean restart;
+        do {
+            BaseBallGame baseBallGame = new BaseBallGame();
+            restart = baseBallGame.start();
+        } while (restart);
     }
 
 }
