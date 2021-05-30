@@ -33,7 +33,7 @@ public class BaseBallGame {
         return inputDataRefining(scanner.next());
     }
 
-    public List<Integer> inputDataRefining(String inputData) {
+    private List<Integer> inputDataRefining(String inputData) {
         String[] spaceRemove = inputData.trim().split("");
         return Arrays.stream(spaceRemove).map(Integer::valueOf).collect(Collectors.toList());
     }
