@@ -20,10 +20,9 @@ public class RandomNumbersCreatorTest {
         //given
         RandomNumbersCreator numbersCreator = new RandomNumbersCreator();
         //when
-        List<Integer> numbers = numbersCreator.create();
+        AnswerNumber answerNumber = numbersCreator.create();
         //then
-
-        assertThat(numbers.size()).isEqualTo(3);
+        assertThat(answerNumber.getSelectedNumber().size()).isEqualTo(3);
     }
 
     @Test
@@ -32,9 +31,9 @@ public class RandomNumbersCreatorTest {
         //given
         RandomNumbersCreator numbersCreator = new RandomNumbersCreator();
         //when
-        List<Integer> numbers = numbersCreator.create();
+        AnswerNumber answerNumber = numbersCreator.create();
         //then
-        Set<Integer> set = new HashSet<>(numbers);
+        Set<Integer> set = new HashSet<>(answerNumber.getSelectedNumber());
         assertThat(set.size()).isEqualTo(3);
     }
 }

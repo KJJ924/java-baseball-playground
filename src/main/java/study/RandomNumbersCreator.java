@@ -14,8 +14,8 @@ public class RandomNumbersCreator {
     private static final List<Integer> RANDOM_NUMBERS = new ArrayList<>(
         List.of(1, 2, 3, 4, 5, 6, 7, 8, 9));
 
-    public List<Integer> create() {
+    public AnswerNumber create() {
         Collections.shuffle(RANDOM_NUMBERS);
-        return RANDOM_NUMBERS.stream().limit(3).collect(Collectors.toList());
+        return new AnswerNumber(RANDOM_NUMBERS.stream().limit(3).collect(Collectors.toList()));
     }
 }

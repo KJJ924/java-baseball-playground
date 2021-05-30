@@ -8,13 +8,13 @@ import java.util.List;
  */
 public class StrikeAndBallCheckService {
 
-    private final List<Integer> numbers;
+    private final AnswerNumber answerNumber;
     private int strikeCount;
     private int ballCount;
 
 
-    public StrikeAndBallCheckService(List<Integer> numbers) {
-        this.numbers = numbers;
+    public StrikeAndBallCheckService(AnswerNumber answerNumber) {
+        this.answerNumber = answerNumber;
     }
 
     public boolean checking(List<Integer> target) {
@@ -28,11 +28,11 @@ public class StrikeAndBallCheckService {
     }
 
     private void contains(int value, int index) {
-        if (numbers.contains(value) && numbers.get(index).equals(value)) {
+        if (answerNumber.containsExactly(value,index)) {
             strikeCount += 1;
             return;
         }
-        if (numbers.contains(value)) {
+        if (answerNumber.contains(value)) {
             ballCount += 1;
         }
     }
