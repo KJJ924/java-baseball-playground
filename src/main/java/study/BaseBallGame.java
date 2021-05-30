@@ -30,10 +30,10 @@ public class BaseBallGame {
     }
     private List<Integer> userInput() {
         GameView.inputPrint();
-        return InputDataRefining(scanner.next());
+        return inputDataRefining(scanner.next());
     }
 
-    public List<Integer> InputDataRefining(String inputData) {
+    public List<Integer> inputDataRefining(String inputData) {
         String[] spaceRemove = inputData.trim().split("");
         return Arrays.stream(spaceRemove).map(Integer::valueOf).collect(Collectors.toList());
     }
